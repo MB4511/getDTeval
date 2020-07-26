@@ -1,0 +1,25 @@
+Package: getDTeval
+Title: Implements programmaticly designed coding statements without compromising on the runtime performance
+Version: 0.0.1
+Authors@R: c(
+    person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
+    person("Anderson", "Nelson", , "an2908@columbia.edu", c("ctb")),
+    person("Caffrey", "Lee", , "cl3802@columbia.edu", c("ctb")),
+    person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb","cre"))
+    )
+Depends: R (>= 3.1.0)
+Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design. 
+    The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
+License: GPL-3 
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    dplyr
+Imports: 
+    data.table,
+    formulaic,
+    microbenchmark
+VignetteBuilder: knitr
