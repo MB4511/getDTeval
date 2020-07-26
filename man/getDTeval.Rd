@@ -18,13 +18,13 @@ getDTeval(
 
 \item{return.as}{refers to the mode of output. It could return the results as a coding statement (return.as = "code"), an evaluated coding result (return.as = "result", which is the default value), or a combination of both (return.as = "all").}
 
+\item{coding.statements.as}{determines whether the coding statements provided as outputs are returned as expression objects (return.as = "expression") or as character values (return.as = "character", which is the default).}
+
 \item{eval.type}{a character value stating whether the coding statement should be evaluated in its current form (eval.type = "as.is") or have its called to get() and eval() translated (eval.type = "optimized", the default setting).}
 
 \item{envir}{Specify the environment for the required function. .GlobalEnv is set as default}
 
 \item{...}{provision for additional arguments}
-
-\item{coding.statement.as}{determines whether the coding statements provided as outputs are returned as expression objects (return.as = "expression") or as character values (return.as = "character", which is the default).}
 }
 \description{
 The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.  The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs
