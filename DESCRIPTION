@@ -21,5 +21,7 @@ Suggests:
 Imports: 
     data.table,
     formulaic,
-    microbenchmark
+    microbenchmark,
+    stats,
+    utils
 VignetteBuilder: knitr

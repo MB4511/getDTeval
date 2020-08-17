@@ -9,7 +9,13 @@
 #' @param ... provision for additonal arguments
 #' @import microbenchmark
 #' @import data.table
+#' @import stats
+#' @import utils
 #' @export
+NULL
+
+## quiets concerns of R CMD check re: the .'s that appear in pipelines
+if(getRversion() >= "2.15.1")  utils::globalVariables(c("category","seconds","."))
 
 
 benchmark.getDTeval <- function(the.statement, times = 30, seed = 47, envir = .GlobalEnv, ...){
