@@ -1,5 +1,5 @@
 Package: getDTeval
-Title: Implements Programmaticly Designed Coding statements without Compromising on the Runtime Performance
+Title: Implements Programmatically Designed Coding Statements without Compromising on the Runtime Performance
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
