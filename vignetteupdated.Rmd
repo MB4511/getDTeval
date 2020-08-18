@@ -6,9 +6,9 @@ output:
   html_document: default
   rmarkdown::html_vignette: default
 vignette: >
-  %VignetteIndexEntry{Vignette Title}
+  %VignetteIndexEntry{Introduction to getDTeval}
   %VignetteEngine{knitr::rmarkdown}
-  %VignetteEncoding{UTF-8}
+  usepackage[utf8]{inputenc}
 ---
 
 ```{r, include = FALSE}
