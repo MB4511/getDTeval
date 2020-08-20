@@ -25,4 +25,4 @@ Imports:
     microbenchmark,
     stats,
     utils
-VignettesBuilder: knitr
+VignetteBuilder: knitr

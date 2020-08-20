@@ -11,7 +11,8 @@ Maintainer: ‘Mayur Bansal <mb4511@columbia.edu>’
 
 New submission
 
-Package has a VignetteBuilder field but no prebuilt vignette index.
+Unknown, possibly mis-spelled, fields in DESCRIPTION:
+  ‘VignettesBuilder’
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -27,8 +28,8 @@ Package has a VignetteBuilder field but no prebuilt vignette index.
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... NOTE
-Non-standard files/directories found at top level:
-  ‘benchmark.getDTeval.R’ ‘vignette’ ‘vignetteupdated.Rmd’
+Non-standard file/directory found at top level:
+  ‘vignette’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
