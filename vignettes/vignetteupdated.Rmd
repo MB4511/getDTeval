@@ -1,0 +1,388 @@
+---
+title: "Introduction to getDTeval"
+author: ''
+date: '`r Sys.Date()`'
+output:
+  html_document: default
+  rmarkdown::html_vignette: default
+vignette: |
+  %\VignetteIndexEntry{Introduction to getDTeval} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette aims to provide an introduction to getDTeval and an approach to implementing programmaticly designed coding statements without compromising on the runtime performance. Familiarity with the syntax of the data.table and dplyr packages would be useful, but it is not essential to follow this vignette. 
+
+
+```{r setup, echo=FALSE, include=FALSE}
+library(data.table)
+library(dplyr)
+library(formulaic)
+library(getDTeval)
+library(microbenchmark)
+dat = formulaic::snack.dat
+```
+
+```{r constant,echo=FALSE}
+id.name <- "User ID"
+awareness.name <- "Awareness"
+satisfaction.name <- "Satisfaction"
+age.name <- "Age"
+gender.name <- "Gender"
+income.name <- "Income"
+region.name <- "Region"
+persona.name <- "Persona"
+bp.patterns <- "BP_"
+consumption.name <- "Consumption"
+consideration.name <- "Consideration"
+advocacy.name <- "Advocacy"
+satisfaction.name <- "Satisfaction"
+age.group.name <- "Age Group"
+income.group.name <- "Income Group"
+product.name<-'Product'
+age.decade.name<-"Age_Decade"
+mean.awareness.name <- sprintf('Mean %s', awareness.name)
+mean.satisfaction.name<- sprintf('Mean %s',satisfaction.name)
+```
+
+## Introduction
+
+Programmatic designs build coding statements with flexible structures that can easily be modified.  The best practices of software design recommend using variables to store certain values (e.g. constants or thresholds) that will be used in calculations.  The same principle can apply to the use of the names of variables in a data.frame object.  As an example, we will consider two approaches to calculating a simple mean and constructing a new variable.  The data used here will be based on the **snack.dat** data from the **formulaic** package (<https://cran.r-project.org/web/packages/formulaic/index.html>):
+
+```{r simple_average_approaches}
+library(data.table)
+library(formulaic)
+
+dat <- setDT(copy(snack.dat))
+
+threshold.age <- 35
+
+## Approach 1
+dat[, mean(Age)]
+dat[, youngest_cohort := (Age < threshold.age)]
+
+## Approach 2
+age.name <- "Age"
+youngest.cohort.name <- "youngest_cohort"
+dat[, mean(get(age.name))]
+dat[, eval(youngest.cohort.name) := (get(age.name) < threshold.age)]
+```
+
+
+In the second approach, the **get()** and **eval()** functions are used to convert previously defined variables into quantities that can be used in the calculations.  Within the dat object, using the get function will locate a variable with the corresponding name and return the vector of values for use in the computations of the mean or the logical comparison of ages to a threshold.  Meanwhile, the eval function allows us to specify the name of a new variable that will be added to the dat object.
+
+Programmatic designs with the get() and eval() functions facilitate calculations in functions and in dynamic applications.  Even for basic analyses, this design creates greater flexibility for possible changes.  If the name of the Age variable were later changed to another value (e.g. Age_Years), the program could be adapted with a simple modification to the age.name variable.  Any downstream use of the Age variable through calls of get() or eval() to age.name would automatically adapt to the change.
+
+However, programmatic designs can lead to reduced runtime efficiency.  In the case of simple calls to the get() function, the performance can greatly decrease.  The following example demonstrates the associated reductions in efficiency in the case of calculating a grouped average.
+
+```{r runtime_comparison}
+age.name <- "Age"
+gender.name <- "Gender"
+region.name <- "Region"
+
+library(microbenchmark)
+
+set.seed(seed = 293)
+sampledat <- dat[sample(x = 1:.N, size = 10^6, replace = TRUE)]
+
+times <- 50
+t1 <- microbenchmark(sampledat[, .(mean_age = mean(Age)), keyby = c("Gender", "Region")], times = times)
+t2 <- microbenchmark(sampledat[, .(mean_age = mean(get(age.name))), keyby = c(gender.name, region.name)], times = times)
+
+results <- data.table(Classic_Mean = mean(t1$time), Classic_Median = median(t1$time), Programmatic_Mean = mean(t2$time), Programmatic_Median = median(t2$time)) / 10^9
+
+results[, Effect_Median := Programmatic_Median/Classic_Median]
+
+round(x = results, digits = 4)
+```
+
+For larger sample sizes and more complex calculations, the effect of programmatic designs can significantly increase the running time complexity.
+
+The **getDTeval** package was designed to overcome the trade-offs between programmatic designs and running time efficiency.  The package creates a means of translating calls to get() and eval() into more optimized coding statements.  In doing so, the package not only resolves many observed trade-offs between speed and efficiency; it also creates opportunities to expand the areas in which programmatic designs may be used in common coding applications.
+
+
+## Methods
+
+The getDTeval package introduces two functions: **getDTeval::getDTeval** and **getDTeval::benchmark.getDTeval**.  The getDTeval() function is used to translate and evaluate coding statements into more optimized forms.  The benchmark.getDTeval() function then provides a means of comparing the run-time performance of a coding statement.
+
+
+### getDTeval()
+
+The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.  The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
+
+#### parameter descriptions
+
+- **the.statement** refers to the original coding statement which needs to be translated to an optimized form.  This value may be entered as either a character value or as an expression.
+
+- **return.as** refers to the mode of output. It could return the results as a coding statement (return.as = "code"), an evaluated coding result (return.as = "result", which is the default value), or a combination of both (return.as = "all"). 
+
+- **coding.statements.as** determines whether the coding statements provided as outputs are returned as expression objects (return.as = "expression") or as character values (return.as = "character", which is the default).
+
+- **eval.type** specifies whether the coding statement will be evaluated in its current form (eval.type = "as.is") or in an optimized form (eval.type = "optimized", the default setting).
+
+### Examples of getDTeval()
+
+The following examples demonstrate applications of the getDTeval() function in common calculations.
+
+### Example 1:  Grouped Mean in data.table Using get() Statements
+
+```{r example_1}
+income.name <- "Income"
+gender.name <- "Gender"
+the.statement.1 <- "dat[,.(mean_income=mean(get(income.name))), keyby = get(gender.name)]"
+```
+
+#### Example 1a:  Translated Code
+
+```{r example_1a}
+getDTeval(the.statement = the.statement.1, return.as = "code")
+```
+
+#### Example 1b:  Result
+
+```{r example 1b}
+getDTeval(the.statement = the.statement.1, return.as = "result")
+```
+
+#### Example 1c:  Translations and Results
+
+```{r example 1c}
+getDTeval(the.statement = the.statement.1, return.as = "all")
+```
+
+### Example 2:  Filtered and Grouped Mean with dplyr
+
+
+```{r example_2}
+library(dplyr)
+income.name <- "Income"
+region.name <- "Region"
+awareness.name <- "Awareness"
+
+threshold.income <- 75000
+
+the.statement.2 <- expression(dat %>% filter(get(income.name) < threshold.income) %>% group_by(get(region.name)) %>% summarise(prop_aware = mean(get(awareness.name)))) 
+```
+
+In particular, note that **the.statement** can be entered as either an expression or as a character value.  When the coding statement itself includes quotation marks, some care should be taken to ensure that the statement is properly represented.  For instance, consider a coding statement like dat[, mean(Age), by = c('Region', 'Gender')].  Using double quotation marks for Region or Gender could create issues with writing this statement inside of a character value.  A convention such as only using single quotations inside of the coding statement could simplify the problem.  Otherwise, placing the coding statement in an expression ensures that any set of valid coding symbols may be used.
+
+In the following examples, we will show how the code itself can be returned as either a character or as an expression.
+
+#### Example 2a:  Translations
+
+```{r example_2a}
+getDTeval(the.statement = the.statement.2, return.as = "code", coding.statements.as = "expression")
+getDTeval(the.statement = the.statement.2, return.as = "code", coding.statements.as = "character")
+```
+
+#### Example 2b:  Result
+
+```{r example_2b}
+getDTeval(the.statement = the.statement.2, return.as = "result")
+```
+
+#### Example 1c:  Translations and Results
+
+```{r example_2c}
+getDTeval(the.statement = the.statement.2, return.as = "all", coding.statements.as = "expression")
+getDTeval(the.statement = the.statement.2, return.as = "all", coding.statements.as = "character")
+```
+
+
+### Example 3:  Running Code As Is or in Optimized Statements
+
+The getDTeval() function also includes methods to run the code according to the original statement or in its optimized form.  This is a good way to double check that the coding translation performs as intended.  In the following example, we will demonstrate both kinds of calculations.  This includes the following preliminary steps:
+
+```{r example_3}
+the.statement.3 <- "tab <- dat[, .(prop_awareness = mean(get(awareness.name))), by = eval(region.name)]; setorderv(x = tab, cols = region.name, order = -1)"
+```
+
+
+
+#### Example 3a:  Running Code As Is
+
+When the coding statement is evaluated with return.as = "result" or return.as = "all", then using eval.type = "as.is" means that the original coding statement is evaluated.
+
+```{r example_3a}
+getDTeval(the.statement = the.statement.3, return.as = "result", eval.type = "as.is")
+```
+
+#### Example 3b:  Running the Translated Code
+
+When the coding statement is evaluated with return.as = "result" or return.as = "all", then using eval.type = "optimized" means that the translated coding statement is evaluated.
+
+```{r example_3b}
+getDTeval(the.statement = the.statement.3, return.as = "result", eval.type = "optimized")
+```
+
+### Benchmarking with benchmark.getDTeval()
+
+
+benchmark.getDTeval function facilitates comparisons of the running time complexity of calculations based on different forms of a coding statement.  The original statement's performance will be compared to the running time after the statement is translated using getDTeval().
+
+### parameter description
+
+- **the.statement** refers to the original coding statement, just as in getDTeval().
+- **times** The number of iterations to run the benchmarking experiment.
+- **seed** an integer value specifying the seed of the pseudorandom number generator.
+
+## An example to highlight the benchmark.getDTeval function
+
+To highlight the application of the benchmark.getDTeval() function, we will use a sample of 1 million observations drawn with replacement from the snack.dat.
+
+### Example 4
+
+We will be calculating the mean awareness of the survey's participants by region.  The benchmark.getDTeval() function will be used to compare the running times of the original programmatic coding statement and the translated statement.  This comparison also evaluates the time of the optimized statement, which would use the translated statement without the time required to translate it.
+
+```{r example_4}
+sample.dat <- dat[sample(x = 1:.N, size = 10^6, replace = TRUE)]
+the.statement.4 <- expression(sample.dat[, .(pct_awareness= mean(get(awareness.name)) * 100), keyby = get(region.name)])
+benchmark.getDTeval(the.statement = the.statement.4, times = 50, seed = 282)
+```
+
+The original coding statement uses calls to get() to generate results with a programmatic design.  In the median and average cases, the running time is substantially worse than using the more optimized statement.  There is a real trade-off between the flexibility of the programmatic design and the running time performance of directly naming the variables.  However, translating the programmatic design's coding statement using getDTeval() produces running times that are quite similar to what is produced while directly using the optimized statements.  These results suggest that getDTeval() can effectively eliminate these tradeoffs.
+
+
+## Benefits getDTeval
+
+The getDTeval package offers a number of benefits to bridge the gap between the flexibility of coding statements and their runtime execution. These benefits are as follows:
+
+- Minimizing the running time complexity of the algorithms;
+- Using the available computing resources efficiently;
+- Ease of implementation for an analyst;
+- Translations that can improve the readability of coding designs;
+- Enhanced flexibility with programmatic designs for streamlined iterations and revision.
+
+
+
+## Extending the Capacity for Programmatic Designs
+
+The getDTeval() function performs code translations of any calls to get() or eval() within a coding statement.  In some cases, this translation can enable the use of programmatic designs even when the original coding statement would not properly evaluate.  In the examples below, we will consider some examples that make use of this capability.
+
+### Example 5:  Using eval() in Calculated Quantities with data.table
+
+Earlier in this document, we provided examples in which the eval() function could be used to programmatically add new variables to a data.table object.  However, for calculated quantities inside of data.table's .() notation, this use of eval() would generate an error.  We can demonstrate this problem with the example below:
+
+
+```{r ex_5_a, error= TRUE }
+prop.awareness.name <- "Proportion Aware"
+awareness.name <- "Awareness"
+region.name <- "Region"
+
+dat[,.(eval(mean.awareness.name) = mean(get(awareness.name)) * 100), keyby = get(region.name)]
+```
+
+Translating this statement with getDTeval() would allow us to get the desired results:
+
+```{r ex_5_b}
+the.statement <- 'dat[, .(eval(mean.awareness.name) = mean(get(awareness.name)) * 100), keyby = get(region.name)]'
+
+getDTeval(the.statement = the.statement, return.as = 'all')
+```
+
+
+
+### Example 6:  Using eval() in Calculated Quantities with dplyr
+
+
+In a similar fashion to the previous example, the use of the dplyr package has settings in which using programmatic names for calculated quantities can generate errors.  This is demonstrated in the following example, which also uses getDTeval to resolve the issue.
+
+
+```{r ex_6a, error =TRUE}
+dat %>% group_by(get(region.name)) %>% summarize(eval(mean.awareness.name)=mean(get(awareness.name),na.rm=T))
+```
+
+However, getDTeval allows us to resolve this issue by making the necessary translation to the optimized coding form of the statement.
+
+```{r ex_6b}
+the.statement<- 'dat %>% group_by(get(region.name)) %>% summarize(eval(mean.awareness.name)=mean(get(awareness.name),na.rm=T))'
+
+getDTeval(the.statement = the.statement, return.as='all')
+
+```
+
+### Example 7: Programmatic Mutation with dplyr 
+
+The mutate() function of dplyr can be used to add a new column to a data.frame object.  This step cannot directly be used with a call to the eval() function.  In the following example, we will attempt to add a new variable that calculates the user's age in decades.
+
+```{r example_7a, error=TRUE}
+#age.decade.name <- "Age_Decade"
+#dat[1:10,] %>% mutate(eval(age.decade.name) = floor(get(age.name)/10)) %>% select(eval(age.name), #eval(age.decade.name))
+```
+
+However, getDTeval() offers an acceptable translation of the programmatic design:
+
+```{r example_7b}
+the.statement <- 'dat[1:10,] %>% mutate(eval(age.decade.name) = floor(get(age.name)/10)) %>% select(eval(age.name), eval(age.decade.name))'
+
+getDTeval(the.statement = the.statement, return.as = 'all')
+```
+
+#### Example 8: Improving Readability of Grouped Calculations in dplyr
+
+When the get() function is used in dplyr's group_by() function, the resulting name of the column is based on the programmatic statement.  This is demonstrated with the following example, which calculates the average satisfaction score by the geographic region:
+
+```{r example_8a}
+dat %>% group_by(get(region.name)) %>% summarize(mean_satisfaction = mean(get(satisfaction.name), na.rm=T))
+```
+
+
+
+```{r example_8b}
+
+the.statement<- 'dat %>% group_by(get(region.name)) %>% summarize(eval(sprintf("Mean %s", satisfaction.name)) = mean(get(satisfaction.name), na.rm=T))'
+
+getDTeval(the.statement = the.statement, return.as='all')
+
+```
+
+
+This result adds greater readability to the resulting table.
+
+## Notes
+
+- The usage of getDTeval to find instances of get or eval should be limited to only the get() and eval() functions and not applied to the extended functions such as dynGet, mget, evalq, eval.parent etc. 
+
+- Also, as an extension to the above mentioned disclaimer, the current design of getDTeval function might encounter translation issues with functions that end in get( or eval and may create errors when other functions that end in these prefixes are used. 
+
+To exemplify let us examine the following case:
+
+
+```{r example 9a, error = TRUE}
+
+#mean.get <- function(x){
+  #return(mean(x))
+#}
+
+#getDTeval(the.statement = "mean.get(1:5)", return.as = "result")
+```
+
+Here mean.get() is a customized function created to evaluate the mean of an objext x. 
+  
+However, the use of mean.get() generates a translation error.  Any coding statement that includes the substring **get(** or **eval(** would trigger an attempt at translation by getDTeval().
+
+A workaround this issue would be to add a space between the mean.get( functionality and the parenthesis as follows:
+
+```{r eample 9b}
+getDTeval(the.statement = "mean.get (1:5)", return.as = "result")
+```
+
+This addition of space allows the getDteval() function to perform the required translation effectively.  This comes with a caveat that legitimate calls to get() and eval() functions will not be translated if there is a space before the parenthesis. Therefore, the user should be careful in using the custom or extended functions involving get( or eval( while using the getDTeval package. 
+
+
+## Conclusion
+
+This document has demonstrated the applications of the getDTeval package.  Through translations of coding statements, the getDTeval() function is able to incorporate programmatic designs while approximating the running time performance of more optimized code.  The method allows the user to construct programmatic statements that would be useful but are not fully supported by some existing packages.  Furthermore, because the method can show the resulting translation, there is an excellent opportunity to study the different ways of constructing a coding statement.  Meanwhile, the benchmark.getDTeval() function provides a direct means of comparing the typical times to evaluate a coding statement with and without programmatic designs relative to a more optimized benchmark.
+
+Analyses that make use of customized functions and dynamic applications can benefit from the use of get() and eval().  The observed trade-offs between flexibility and speed can be largely overcome through the use of the getDTeval package.  This also suggests greater opportunities to employ translations of code to further improve the performance of coding styles in R.
+
+
+
+
+
+

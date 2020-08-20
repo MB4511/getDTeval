@@ -1,0 +1,92 @@
+Hmm ... looks like a package
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-08-07>
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty))
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pd
+fmode.def)
+No file Rd2.aux.
+
+LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 34.
+
+No file Rd2.toc.
+[1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.
+map}] [2] [3] (./Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/T
+inyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal
+/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/m
+ayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb>
+Output written on Rd2.pdf (3 pages, 111512 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-08-07>
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty))
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pd
+fmode.def) (./Rd2.aux)
+
+LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 34.
+
+(./Rd2.toc) [1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/up
+dmap/pdftex.map}] [2] [3] (./Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/T
+inyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal
+/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/m
+ayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb>
+Output written on Rd2.pdf (3 pages, 111529 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘getDTeval-manual.pdf’ ...
+Done
+You may want to clean up by 'rm -Rf /var/folders/lb/s1cl0jnj2_34jj3cp4cnw7rh0000gp/T//RtmpOUxExk/Rd2pdfd5183572cf4a'

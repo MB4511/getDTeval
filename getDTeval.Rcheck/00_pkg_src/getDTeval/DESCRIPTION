@@ -1,5 +1,6 @@
 Package: getDTeval
-Title: Implements Programmatically Designed Coding Statements without Compromising on the Runtime Performance
+Title: Implements Programmatically Designed Coding Statements without
+        Compromising on the Runtime Performance
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
@@ -11,18 +12,18 @@ Authors@R: c(
 Depends: R (>= 3.1.0)
 Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design. 
     The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
-License: GPL-3 
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: 
-    knitr,
-    rmarkdown,
-    dplyr
-Imports: 
-    data.table,
-    formulaic,
-    microbenchmark,
-    stats,
-    utils
-VignettesBuilder: knitr
+Suggests: knitr, rmarkdown, dplyr
+Imports: data.table, formulaic, microbenchmark, stats, utils
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2020-08-20 02:17:03 UTC; mayurbansal
+Author: David Shilane [aut],
+  Anderson Nelson [ctb],
+  Caffrey Lee [ctb],
+  Zichen Huang [ctb],
+  Mayur Bansal [ctb, cre]
+Maintainer: Mayur Bansal <mb4511@columbia.edu>
