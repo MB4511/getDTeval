@@ -29,3 +29,9 @@ getDTeval(
 \description{
 The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.  The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs
 }
+\examples{
+# Using getDTeval to calculate mean age
+dat<-formulaic::snack.dat
+age.name<-'Age'
+getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
+}
