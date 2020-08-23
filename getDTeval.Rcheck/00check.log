@@ -55,13 +55,11 @@ Non-standard file/directory found at top level:
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking examples ... NONE
+* checking examples ... OK
 * checking PDF version of manual ... WARNING
 LaTeX errors when creating PDF version.
 This typically indicates Rd problems.
 LaTeX errors found:
 * checking PDF version of manual without hyperrefs or index ... OK
-* checking for code which exercises the package ... WARNING
-No examples, no tests, no vignettes
 * DONE
-Status: 2 WARNINGs, 2 NOTEs
+Status: 1 WARNING, 2 NOTEs

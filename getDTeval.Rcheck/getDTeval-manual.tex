@@ -93,6 +93,15 @@ getDTeval(
 \item[\code{...}] provision for additional arguments
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+# Using getDTeval to calculate mean age
+dat<-formulaic::snack.dat
+age.name<-'Age'
+getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
+\end{ExampleCode}
+\end{Examples}
 \inputencoding{utf8}
 \HeaderA{translate.fn.calls}{translate.fn.calls}{translate.fn.calls}
 %

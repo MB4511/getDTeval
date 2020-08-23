@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.17)  19 AUG 2020 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.17)  22 AUG 2020 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,14 +325,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 {/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
-p}] [2]
+p}]
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 98.
+ [2]
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 1
+01.
+
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
+File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 101.
 No file Rd2.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
 
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
@@ -345,32 +356,33 @@ Package rerunfilecheck Info: Checksums for `Rd2.out':
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 5415 strings out of 482841
- 84936 string characters out of 5952941
+ 5437 strings out of 482841
+ 85330 string characters out of 5952941
  346500 words of memory out of 5000000
- 20652 multiletter control sequences out of 15000+600000
- 540871 words of font info for 48 fonts, out of 8000000 for 9000
+ 20668 multiletter control sequences out of 15000+600000
+ 541663 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,5n,43p,379b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,5n,43p,379b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4
--ot1-0.enc}</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/in
-consolata/Inconsolata-zi4r.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx10.pfb></Users/mayurbansal/Library/TinyTeX/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/mayurbansal/Library/
-TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/mayurbansa
-l/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/m
-ayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msl10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmss12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmti10.pfb>
-Output written on Rd2.pdf (3 pages, 112409 bytes).
+-ts1.enc}{/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconso
+lata/i4-ot1-0.enc}</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/pu
+blic/inconsolata/Inconsolata-zi4r.pfb></Users/mayurbansal/Library/TinyTeX/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/mayurbansal/Library/Tin
+yTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/mayurbansal/L
+ibrary/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/may
+urbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsl10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Rd2.pdf (3 pages, 114289 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

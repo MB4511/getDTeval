@@ -11,6 +11,11 @@
 #' @import data.table
 #' @import stats
 #' @import utils
+#' @examples
+#' # Using benchmark.getDteval to compare runtime performance of original coding statement, optimized statement and getDteval statement while calculating the mean age
+#' dat<-formulaic::snack.dat
+#' age.name<-'Age'
+#' benchmark.getDTeval(the.statement = 'dat[,.(mean_age=mean(Age))]', times = 50, seed = 282)
 #' @export
 #NULL
 

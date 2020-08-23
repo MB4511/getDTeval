@@ -20,11 +20,11 @@ Suggests: knitr, rmarkdown, dplyr
 Imports: data.table, formulaic, microbenchmark, stats, utils
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-08-20 04:45:58 UTC; mayurbansal
+Packaged: 2020-08-23 01:44:40 UTC; mayurbansal
 Author: David Shilane [aut],
   Anderson Nelson [ctb],
   Caffrey Lee [ctb],
   Zichen Huang [ctb],
   Mayur Bansal [ctb, cre]
 Maintainer: Mayur Bansal <mb4511@columbia.edu>
-Built: R 3.6.0; ; 2020-08-20 04:47:29 UTC; unix
+Built: R 3.6.0; ; 2020-08-23 01:46:19 UTC; unix

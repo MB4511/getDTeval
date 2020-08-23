@@ -27,22 +27,82 @@ LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 
 No file Rd2.toc.
 [1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.
-map}] [2] [3] (./Rd2.aux)
+map}] [2]
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd)
+Overfull \hbox (15.84671pt too wide) in paragraph at lines 100--100
+ []\OT1/cmtt/m/n/9 getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 d
+at[,.(mean_age=mean(get(age.name)))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 ,return.as
+ = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 result\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 )[] 
+
+[3] (./Rd2.aux)
+kpathsea: Running mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 tctt0900
+mktexpk: Running mf-nowin -progname=mf \mode:=ljfour; mag:=1+0/600; nonstopmode; input tctt0900
+This is METAFONT, Version 2.7182818 (TeX Live 2020) (preloaded base=mf)
+
+
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/tctt090
+0.mf
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/exbase.
+mf)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/tctt.mf
+
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txsymb.
+mf
+ Ok
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/exacces
+s.mf
+ Ok)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txpseud
+o.mf
+ Ok)
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txaccen
+t.mf
+ Ok [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [27] [29])
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txgen.m
+f
+ Ok [100] [109] [98] [99] [108])
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txsymbo
+l.mf
+ Ok [13] [18] [21] [22] [23] [24] [25] [26] [28] [31] [32] [36] [39] [44]
+[45] [46] [42] [47] [60] [61] [62] [77] [79] [87] [110] [91] [93] [94] [95]
+[96] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137]
+[138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149]
+[150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161]
+[162] [163] [164] [165] [166] [167] [168] [169] [171] [172] [173] [174]
+[175] [177] [176] [180] [181] [182] [183] [184] [187] [191] [214] [246])
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txromod
+.mf
+ Ok [48] [49] [50] [51] [52] [53] [54] [55] [56] [57])
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txrsupe
+r.mf
+ Ok [185] [178] [179] [170] [186])
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/source/jknappen/ec/txrfrac
+t.mf
+ Ok [188] [189] [190]) ) ) )
+Font metrics written on tctt0900.tfm.
+Output written on tctt0900.600gf (128 characters, 17564 bytes).
+Transcript written on tctt0900.log.
+mktexpk: /Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0900.600pk: successfully generated.
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- )</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/T
-inyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal
-/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/m
-ayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb>
-Output written on Rd2.pdf (3 pages, 111512 bytes).
+ )
+(see the transcript file for additional information) </Users/mayurbansal/Librar
+y/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0900.600pk></Users/mayurban
+sal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></User
+s/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal/Library/TinyTeX/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library
+/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/mayurbans
+al/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users
+/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pf
+b>
+Output written on Rd2.pdf (3 pages, 123468 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -70,23 +130,34 @@ LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              for symbol `textless' on input line 34.
 
 (./Rd2.toc) [1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/up
-dmap/pdftex.map}] [2] [3] (./Rd2.aux)
+dmap/pdftex.map}] [2]
+(/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd)
+Overfull \hbox (15.84671pt too wide) in paragraph at lines 100--100
+ []\OT1/cmtt/m/n/9 getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 d
+at[,.(mean_age=mean(get(age.name)))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 ,return.as
+ = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 result\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 )[] 
+
+[3] (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- )</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/T
-inyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal
-/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/m
-ayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb>
-Output written on Rd2.pdf (3 pages, 111529 bytes).
+ )
+(see the transcript file for additional information) </Users/mayurbansal/Librar
+y/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0900.600pk></Users/mayurban
+sal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></User
+s/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/mayurbansal/Library/TinyTeX/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library
+/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/mayurbans
+al/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users
+/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pf
+b>
+Output written on Rd2.pdf (3 pages, 123480 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘getDTeval-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /var/folders/lb/s1cl0jnj2_34jj3cp4cnw7rh0000gp/T//Rtmp7R1jzf/Rd2pdf697a15527bf7'
+You may want to clean up by 'rm -Rf /var/folders/lb/s1cl0jnj2_34jj3cp4cnw7rh0000gp/T//RtmpTGGf7Q/Rd2pdf11eb94e08c4a5'
