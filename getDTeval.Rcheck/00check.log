@@ -11,8 +11,7 @@ Maintainer: ‘Mayur Bansal <mb4511@columbia.edu>’
 
 New submission
 
-Unknown, possibly mis-spelled, fields in DESCRIPTION:
-  ‘VignettesBuilder’
+Package has a VignetteBuilder field but no prebuilt vignette index.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK

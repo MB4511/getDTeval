@@ -18,13 +18,13 @@ LazyData: true
 RoxygenNote: 7.1.1
 Suggests: knitr, rmarkdown, dplyr
 Imports: data.table, formulaic, microbenchmark, stats, utils
-VignettesBuilder: knitr
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-08-20 04:40:50 UTC; mayurbansal
+Packaged: 2020-08-20 04:45:58 UTC; mayurbansal
 Author: David Shilane [aut],
   Anderson Nelson [ctb],
   Caffrey Lee [ctb],
   Zichen Huang [ctb],
   Mayur Bansal [ctb, cre]
 Maintainer: Mayur Bansal <mb4511@columbia.edu>
-Built: R 3.6.0; ; 2020-08-20 04:43:30 UTC; unix
+Built: R 3.6.0; ; 2020-08-20 04:47:29 UTC; unix
