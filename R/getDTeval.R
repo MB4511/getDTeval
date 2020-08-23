@@ -72,6 +72,7 @@ translate.fn.calls <- function(the.statement, function.name = "get(", envir = .G
 #' @examples
 #' # Using getDTeval to calculate mean age
 #' dat<-formulaic::snack.dat
+#' age.name<-'Age'
 #' getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
 #' @export
 
