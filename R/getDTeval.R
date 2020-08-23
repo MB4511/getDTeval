@@ -69,6 +69,10 @@ translate.fn.calls <- function(the.statement, function.name = "get(", envir = .G
 #' @param eval.type a character value stating whether the coding statement should be evaluated in its current form (eval.type = "as.is") or have its called to get() and eval() translated (eval.type = "optimized", the default setting).
 #' @param envir Specify the environment for the required function. .GlobalEnv is set as default
 #' @param ... provision for additional arguments
+#' @examples
+#' # Using getDTeval to calculate mean age
+#' dat<-formulaic::snack.dat
+#' getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
 #' @export
 
 getDTeval <- function(the.statement, return.as = "result", coding.statements.as = "character", eval.type = "optimized", envir = .GlobalEnv, ...){
