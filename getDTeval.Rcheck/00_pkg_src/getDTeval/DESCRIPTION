@@ -20,7 +20,7 @@ Suggests: knitr, rmarkdown, dplyr
 Imports: data.table, formulaic, microbenchmark, stats, utils
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-08-23 01:44:40 UTC; mayurbansal
+Packaged: 2020-08-26 18:43:06 UTC; mayurbansal
 Author: David Shilane [aut],
   Anderson Nelson [ctb],
   Caffrey Lee [ctb],
