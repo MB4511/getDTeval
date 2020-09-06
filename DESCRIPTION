@@ -3,10 +3,11 @@ Title: Implements Programmatically Designed Coding Statements without Compromisi
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
+    person("Mayur","Bansal", , "mb4511@columbia.edu", c("ctb","cre")),
     person("Anderson", "Nelson", , "an2908@columbia.edu", c("ctb")),
     person("Caffrey", "Lee", , "cl3802@columbia.edu", c("ctb")),
-    person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb")),
-    person("Mayur","Bansal", , "mb4511@columbia.edu", c("ctb","cre"))
+    person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb"))
+
     )
 Depends: R (>= 3.1.0)
 Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design. 
@@ -18,7 +19,8 @@ RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,
-    dplyr
+    dplyr,
+    testthat
 Imports: 
     data.table,
     formulaic,
