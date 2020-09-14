@@ -18,6 +18,28 @@ library('getDTeval')
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 cleanEx()
+nameEx("benchmark.getDTeval")
+### * benchmark.getDTeval
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: benchmark.getDTeval
+### Title: benchmark.getDTeval
+### Aliases: benchmark.getDTeval
+
+### ** Examples
+
+# Using benchmark.getDteval to compare runtime performance of original coding statement, optimized statement and getDteval statement while calculating the mean age
+dat<-formulaic::snack.dat
+age.name<-'Age'
+benchmark.getDTeval(the.statement = 'dat[,.(mean_age=mean(Age))]', times = 50, seed = 282)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("benchmark.getDTeval", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
 nameEx("getDTeval")
 ### * getDTeval
 

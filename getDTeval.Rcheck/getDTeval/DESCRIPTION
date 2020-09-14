@@ -4,27 +4,27 @@ Title: Implements Programmatically Designed Coding Statements without
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
+    person("Mayur","Bansal", , "mb4511@columbia.edu", c("ctb","cre")),
     person("Anderson", "Nelson", , "an2908@columbia.edu", c("ctb")),
     person("Caffrey", "Lee", , "cl3802@columbia.edu", c("ctb")),
-    person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb")),
-    person("Mayur","Bansal", , "mb4511@columbia.edu", c("ctb","cre"))
+    person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb"))
     )
 Depends: R (>= 3.1.0)
-Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design. 
+Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.
     The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: knitr, rmarkdown, dplyr
-Imports: data.table, formulaic, microbenchmark, stats, utils
+Suggests: knitr, rmarkdown, dplyr, formulaic, testthat (>= 2.1.0)
+Imports: data.table, microbenchmark, stats, utils
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-08-26 18:43:06 UTC; mayurbansal
+Packaged: 2020-09-14 00:05:42 UTC; mayurbansal
 Author: David Shilane [aut],
+  Mayur Bansal [ctb, cre],
   Anderson Nelson [ctb],
   Caffrey Lee [ctb],
-  Zichen Huang [ctb],
-  Mayur Bansal [ctb, cre]
+  Zichen Huang [ctb]
 Maintainer: Mayur Bansal <mb4511@columbia.edu>
-Built: R 3.6.0; ; 2020-08-26 18:46:08 UTC; unix
+Built: R 3.6.0; ; 2020-09-14 00:07:24 UTC; unix

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.17)  26 AUG 2020 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.17)  13 SEP 2020 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,23 +327,29 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}]
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 98.
- [2]
-LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 1
-01.
+(Font)              scaled to size 9.0pt on input line 73.
 
+Overfull \hbox (308.21954pt too wide) in paragraph at lines 74--74
+ []\OT1/zi4/m/n/9 # Using benchmark.getDteval to compare runtime performance of
+ original coding statement, optimized statement and getDteval statement while c
+alculating the mean age[] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 7
+6.
 (/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 101.
+(Font)              scaled to size 9.0pt on input line 76.
+[2] [3]
 No file Rd2.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
@@ -352,20 +358,20 @@ Package rerunfilecheck Warning: File `Rd2.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `Rd2.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  FDE4C978597070053EF035FCAC45913F;192.
+(rerunfilecheck)             After:  67639912F3C9BDB04607116A59A7FAE9;262.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 5437 strings out of 482841
- 85330 string characters out of 5952941
- 346500 words of memory out of 5000000
+ 5444 strings out of 482841
+ 85428 string characters out of 5952941
+ 347500 words of memory out of 5000000
  20668 multiletter control sequences out of 15000+600000
  541663 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,5n,43p,379b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,5n,43p,386b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4
 -ts1.enc}{/Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconso
 lata/i4-ot1-0.enc}</Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/pu
@@ -379,10 +385,10 @@ Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 ts/cm/cmsl10.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library/TinyTeX/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Rd2.pdf (3 pages, 114483 bytes).
+Output written on Rd2.pdf (4 pages, 120167 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
+ 94 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 29 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

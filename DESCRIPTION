@@ -19,10 +19,10 @@ Suggests:
     knitr,
     rmarkdown,
     dplyr,
-    testthat
+    formulaic,
+    testthat (>= 2.1.0)
 Imports: 
     data.table,
-    formulaic,
     microbenchmark,
     stats,
     utils

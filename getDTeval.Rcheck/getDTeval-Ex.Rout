@@ -37,6 +37,36 @@ Type 'q()' to quit R.
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
+> nameEx("benchmark.getDTeval")
+> ### * benchmark.getDTeval
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: benchmark.getDTeval
+> ### Title: benchmark.getDTeval
+> ### Aliases: benchmark.getDTeval
+> 
+> ### ** Examples
+> 
+> # Using benchmark.getDteval to compare runtime performance of original coding statement, optimized statement and getDteval statement while calculating the mean age
+> dat<-formulaic::snack.dat
+> age.name<-'Age'
+> benchmark.getDTeval(the.statement = 'dat[,.(mean_age=mean(Age))]', times = 50, seed = 282)
+                     category      Min.   1st Qu.    Median      Mean   3rd Qu.
+1:  original coding statement 0.0003534 0.0003595 0.0003745 0.0004186 0.0004227
+2:        getDTeval statement 0.0003973 0.0004003 0.0004059 0.0004417 0.0004374
+3: optimized coding statement 0.0003533 0.0003583 0.0003747 0.0005316 0.0003886
+        Max.
+1: 0.0007578
+2: 0.0008347
+3: 0.0075662
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("benchmark.getDTeval", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
 > nameEx("getDTeval")
 > ### * getDTeval
 > 
@@ -65,7 +95,7 @@ Type 'q()' to quit R.
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.188 0.013 0.21 0 0 
+Time elapsed:  0.419 0.018 0.393 0 0 
 > grDevices::dev.off()
 null device 
           1 

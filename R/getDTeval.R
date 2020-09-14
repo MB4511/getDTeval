@@ -59,7 +59,7 @@ translate.fn.calls <- function(the.statement, function.name = "get(", envir = .G
 }
 
 
-#' getDTeval
+#' @title getDTeval
 #'
 #' @description The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.  The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs
 #'

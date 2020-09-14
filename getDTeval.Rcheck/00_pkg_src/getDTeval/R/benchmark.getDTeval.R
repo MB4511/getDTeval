@@ -1,4 +1,4 @@
-#' benchmark.getDTeval
+#' @title benchmark.getDTeval
 #'
 #' @description Performs a benchmarking experiment for data.table coding statements that use get() or eval() for programmatic designs.  The a) original statement is compared to b) passing the original statement through getDTeval and also to c) an optimized coding statement.  The results can demonstrate the overall improvement of using the coding translations offered by getDTeval()
 #'
@@ -17,10 +17,10 @@
 #' age.name<-'Age'
 #' benchmark.getDTeval(the.statement = 'dat[,.(mean_age=mean(Age))]', times = 50, seed = 282)
 #' @export
-#NULL
+
 
 ## quiets concerns of R CMD check re: the .'s that appear in pipelines
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("category","seconds","."))
+#if(getRversion() >= "2.15.1")  utils::globalVariables(c("category","seconds","."))
 
 
 benchmark.getDTeval <- function(the.statement, times = 30, seed = 47, envir = .GlobalEnv, ...){

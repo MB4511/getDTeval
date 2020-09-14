@@ -27,14 +27,23 @@ LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 
 No file Rd2.toc.
 [1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.
-map}] [2]
+map}]
+Overfull \hbox (374.94693pt too wide) in paragraph at lines 72--72
+ []\OT1/cmtt/m/n/9 # Using benchmark.getDteval to compare runtime performance o
+f original coding statement, optimized statement and getDteval statement while 
+calculating the mean age[] 
 (/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd)
-Overfull \hbox (15.84671pt too wide) in paragraph at lines 100--100
+Overfull \hbox (30.02374pt too wide) in paragraph at lines 75--75
+ []\OT1/cmtt/m/n/9 benchmark.getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cm
+tt/m/n/9 dat[,.(mean_age=mean(Age))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 , times = 
+50, seed = 282)[] 
+[2]
+Overfull \hbox (15.84671pt too wide) in paragraph at lines 141--141
  []\OT1/cmtt/m/n/9 getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 d
 at[,.(mean_age=mean(get(age.name)))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 ,return.as
  = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 result\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 )[] 
 
-[3] (./Rd2.aux)
+[3] [4] (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -53,7 +62,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library
 al/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users
 /mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pf
 b>
-Output written on Rd2.pdf (3 pages, 123661 bytes).
+Output written on Rd2.pdf (4 pages, 129578 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -81,14 +90,23 @@ LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              for symbol `textless' on input line 34.
 
 (./Rd2.toc) [1{/Users/mayurbansal/Library/TinyTeX/texmf-var/fonts/map/pdftex/up
-dmap/pdftex.map}] [2]
+dmap/pdftex.map}]
+Overfull \hbox (374.94693pt too wide) in paragraph at lines 72--72
+ []\OT1/cmtt/m/n/9 # Using benchmark.getDteval to compare runtime performance o
+f original coding statement, optimized statement and getDteval statement while 
+calculating the mean age[] 
 (/Users/mayurbansal/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd)
-Overfull \hbox (15.84671pt too wide) in paragraph at lines 100--100
+Overfull \hbox (30.02374pt too wide) in paragraph at lines 75--75
+ []\OT1/cmtt/m/n/9 benchmark.getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cm
+tt/m/n/9 dat[,.(mean_age=mean(Age))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 , times = 
+50, seed = 282)[] 
+[2] [3]
+Overfull \hbox (15.84671pt too wide) in paragraph at lines 141--141
  []\OT1/cmtt/m/n/9 getDTeval(the.statement = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 d
 at[,.(mean_age=mean(get(age.name)))]\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 ,return.as
  = \TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 result\TS1/cmtt/m/n/9 '\OT1/cmtt/m/n/9 )[] 
 
-[3] (./Rd2.aux)
+[4] (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -107,8 +125,8 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/mayurbansal/Library
 al/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users
 /mayurbansal/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pf
 b>
-Output written on Rd2.pdf (3 pages, 123670 bytes).
+Output written on Rd2.pdf (4 pages, 129662 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘getDTeval-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /var/folders/lb/s1cl0jnj2_34jj3cp4cnw7rh0000gp/T//Rtmpr9QBAv/Rd2pdf36d677c2750d'
+You may want to clean up by 'rm -Rf /var/folders/lb/s1cl0jnj2_34jj3cp4cnw7rh0000gp/T//RtmpStNq8q/Rd2pdf5c016bdb5a01'
