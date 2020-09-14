@@ -6,7 +6,7 @@ output:
   html_document: default
   rmarkdown::html_vignette: default
 vignette: >
-  %\VignetteIndexEntry{Introduction to Formulaic}
+  %\VignetteIndexEntry{Introduction to getDTeval}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
