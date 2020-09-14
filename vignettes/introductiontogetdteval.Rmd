@@ -281,7 +281,7 @@ dat[,.(eval(mean.awareness.name) = mean(get(awareness.name)) * 100), keyby = get
 
 Translating this statement with getDTeval() would allow us to get the desired results:
 
-```{r ex_5_b}
+```{r ex_5_b, error = TRUE}
 the.statement <- 'dat[, .(eval(mean.awareness.name) = mean(get(awareness.name)) * 100), keyby = get(region.name)]'
 
 getDTeval(the.statement = the.statement, return.as = 'all')
