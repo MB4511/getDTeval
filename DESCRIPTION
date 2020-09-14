@@ -20,6 +20,7 @@ Suggests:
     rmarkdown,
     dplyr,
     formulaic,
+    devtools,
     testthat (>= 2.1.0)
 Imports: 
     data.table,
