@@ -19,14 +19,11 @@ Suggests:
     knitr,
     rmarkdown,
     dplyr,
-<<<<<<< HEAD
     testthat (>= 2.1.0), 
-    covr
-=======
+    covr,
     formulaic,
     devtools,
     testthat (>= 2.1.0)
->>>>>>> 403de0320bd85a2cd618f9262b7d6117ccbd025f
 Imports: 
     data.table,
     microbenchmark,
