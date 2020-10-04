@@ -22,12 +22,11 @@ Suggests:
     testthat (>= 2.1.0), 
     covr,
     formulaic,
-    devtools,
-    testthat (>= 2.1.0)
+    devtools
 Imports: 
+    formulaic
     data.table,
     microbenchmark ,
     stats,
-    utils, 
-    formulaic
+    utils
 VignetteBuilder: knitr
