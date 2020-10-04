@@ -44,7 +44,6 @@ age.group.name <- "Age Group"
 income.group.name <- "Income Group"
 product.name<-'Product'
 age.decade.name<-"Age_Decade"
-
 mean.awareness.name <- sprintf('Mean %s', awareness.name)
 mean.satisfaction.name<- sprintf('Mean %s',satisfaction.name)
 ```
@@ -56,11 +55,9 @@ Programmatic designs build coding statements with flexible structures that can e
 ```{r simple_average_approaches}
 dat <- data.table::data.table(formulaic::snack.dat)
 threshold.age <- 35
-
 ## Approach 1
 dat[, mean(Age)]
 dat[, youngest_cohort := (Age < threshold.age)]
-
 ## Approach 2
 age.name <- "Age"
 youngest.cohort.name <- "youngest_cohort"
@@ -79,15 +76,11 @@ However, programmatic designs can lead to reduced runtime efficiency.  In the ca
 age.name <- "Age"
 gender.name <- "Gender"
 region.name <- "Region"
-
-
 set.seed(seed = 293)
 sampledat <- dat[sample(x = 1:.N, size = 10^6, replace = TRUE)]
 times <- 50
-
 t1 <-
   microbenchmark::microbenchmark(sampledat[, .(mean_age = mean(Age)), keyby = c("Gender", "Region")], times = times)
-
 t2 <-
   microbenchmark::microbenchmark(sampledat[, .(mean_age = mean(get(age.name))), keyby = c(gender.name, region.name)], times = times)
                                  
@@ -99,7 +92,6 @@ results <-
     Programmatic_Mean = mean(t2$time),
     Programmatic_Median = median(t2$time)
   ) / 10 ^ 9
-
 results[, Effect_Median := Programmatic_Median/Classic_Median]
 round(x = results, digits = 4)
 ```
@@ -167,7 +159,6 @@ income.name <- "Income"
 region.name <- "Region"
 awareness.name <- "Awareness"
 threshold.income <- 75000
-
 the.statement.2 <-
   expression(
     dat %>% filter(get(income.name) < threshold.income) %>% group_by(get(region.name)) %>% summarise(prop_aware = mean(get(awareness.name)))
@@ -250,7 +241,6 @@ sample.dat <- dat[sample(x = 1:.N,
                          replace = TRUE)]
 the.statement.4 <-
   expression(sample.dat[, .(pct_awareness = mean(get(awareness.name)) * 100), keyby = get(region.name)])
-
 benchmark.getDTeval(the.statement = the.statement.4,
                     times = 50,
                     seed = 282)
@@ -283,7 +273,6 @@ Earlier in this document, we provided examples in which the eval() function coul
 prop.awareness.name <- "Proportion Aware"
 awareness.name <- "Awareness"
 region.name <- "Region"
-
 dat[,eval(mean.awareness.name) = mean(get(awareness.name)) * 100, keyby = get(region.name)]
 ```
 
@@ -381,4 +370,3 @@ This addition of space allows the getDteval() function to perform the required t
 This document has demonstrated the applications of the getDTeval package.  Through translations of coding statements, the getDTeval() function is able to incorporate programmatic designs while approximating the running time performance of more optimized code.  The method allows the user to construct programmatic statements that would be useful but are not fully supported by some existing packages.  Furthermore, because the method can show the resulting translation, there is an excellent opportunity to study the different ways of constructing a coding statement.  Meanwhile, the benchmark.getDTeval() function provides a direct means of comparing the typical times to evaluate a coding statement with and without programmatic designs relative to a more optimized benchmark.
 
 Analyses that make use of customized functions and dynamic applications can benefit from the use of get() and eval().  The observed trade-offs between flexibility and speed can be largely overcome through the use of the getDTeval package.  This also suggests greater opportunities to employ translations of code to further improve the performance of coding styles in R.
-
