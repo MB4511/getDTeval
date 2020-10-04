@@ -27,7 +27,7 @@ benchmark.getDTeval(
 Performs a benchmarking experiment for data.table coding statements that use get() or eval() for programmatic designs.  The a) original statement is compared to b) passing the original statement through getDTeval and also to c) an optimized coding statement.  The results can demonstrate the overall improvement of using the coding translations offered by getDTeval()
 }
 \examples{
-# Using benchmark.getDteval to compare runtime performance of original coding statement, optimized statement and getDteval statement while calculating the mean age
+# Benchmarking runtime performances in calculating mean age
 dat<-formulaic::snack.dat
 age.name<-'Age'
 benchmark.getDTeval(the.statement = 'dat[,.(mean_age=mean(Age))]', times = 50, seed = 282)
