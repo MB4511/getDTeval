@@ -2,5 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
+doc
+Meta
+=======
 docs
 inst/doc
+>>>>>>> 403de0320bd85a2cd618f9262b7d6117ccbd025f

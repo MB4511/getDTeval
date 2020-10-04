@@ -19,6 +19,8 @@ Suggests:
     knitr,
     rmarkdown,
     dplyr,
+    testthat (>= 2.1.0), 
+    covr,
     formulaic,
     devtools,
     testthat (>= 2.1.0)
@@ -26,5 +28,6 @@ Imports:
     data.table,
     microbenchmark,
     stats,
-    utils
+    utils, 
+    formulaic
 VignetteBuilder: knitr
