@@ -24,7 +24,7 @@ Suggests:
     formulaic,
     devtools
 Imports: 
-    formulaic
+    formulaic,
     data.table,
     microbenchmark ,
     stats,
