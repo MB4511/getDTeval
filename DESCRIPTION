@@ -8,7 +8,7 @@ Authors@R: c(
     person("Caffrey", "Lee", , "cl3802@columbia.edu", c("ctb")),
     person("Zichen", "Huang", , "zh2380@columbia.edu", c("ctb"))
     )
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.6.0)
 Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.
     The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
 License: GPL-3 
@@ -26,7 +26,7 @@ Suggests:
     testthat (>= 2.1.0)
 Imports: 
     data.table,
-    microbenchmark,
+    microbenchmark ,
     stats,
     utils, 
     formulaic
