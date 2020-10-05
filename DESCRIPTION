@@ -1,5 +1,5 @@
 Package: getDTeval
-Title: Implements Programmatically Designed Coding Statements without Compromising on the Runtime Performance
+Title: Translating coding statements using get() and eval() for improved run-time coding efficiency
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
