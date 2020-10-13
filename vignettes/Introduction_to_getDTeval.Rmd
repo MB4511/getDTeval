@@ -268,13 +268,16 @@ The getDTeval() function performs code translations of any calls to get() or eva
 
 Earlier in this document, we provided examples in which the eval() function could be used to programmatically add new variables to a data.table object.  However, for calculated quantities inside of data.table's .() notation, this use of eval() would generate an error.  We can demonstrate this problem with the example below:
 
+- Here, we are using data.table to evaluate mean awareness by region. 
 
-```{r ex_5_a, error= TRUE}
 prop.awareness.name <- "Proportion Aware"
 awareness.name <- "Awareness"
 region.name <- "Region"
 dat[,eval(mean.awareness.name) = mean(get(awareness.name)) * 100, keyby = get(region.name)]
-```
+
+Error: unexpected '=' in "dat[,eval(mean.awareness.name) ="
+
+However, we get the above stated error where eval function programmatically is not able to evaluate the desired calculation. 
 
 Translating this statement with getDTeval() would allow us to get the desired results:
 
@@ -290,10 +293,13 @@ getDTeval(the.statement = the.statement, return.as = 'all')
 
 In a similar fashion to the previous example, the use of the dplyr package has settings in which using programmatic names for calculated quantities can generate errors.  This is demonstrated in the following example, which also uses getDTeval to resolve the issue.
 
+- Here, we are using dplyr to calculate mean awareness by region
 
-```{r ex_6a, error =TRUE}
 dat %>% group_by(get(region.name)) %>% summarize(eval(mean.awareness.name)=mean(get(awareness.name),na.rm=T))
-```
+
+Dplyr also generates the following error where '=' is not compatible to use with eval()
+
+Error: unexpected '=' in "dat %>% group_by(get(region.name)) %>% summarize(eval(mean.awareness.name)="
 
 However, getDTeval allows us to resolve this issue by making the necessary translation to the optimized coding form of the statement.
 
@@ -306,10 +312,12 @@ getDTeval(the.statement = the.statement, return.as='all')
 
 The mutate() function of dplyr can be used to add a new column to a data.frame object.  This step cannot directly be used with a call to the eval() function.  In the following example, we will attempt to add a new variable that calculates the user's age in decades.
 
-```{r example_7a, error=TRUE}
 age.decade.name <- "Age_Decade"
 dat[1:10,] %>% mutate(eval(age.decade.name) = floor(get(age.name)/10)) %>% select(eval(age.name), eval(age.decade.name))
-```
+
+Using mutate() from the dplyr package to evaluate age decade as shown above generates the following error:
+
+Error: unexpected '=' in "dat[1:10,] %>% mutate(eval(age.decade.name) ="
 
 However, getDTeval() offers an acceptable translation of the programmatic design:
 
@@ -344,13 +352,10 @@ This result adds greater readability to the resulting table.
 
 To exemplify let us examine the following case:
 
-
-```{r example 9a, error = TRUE}
 mean.get <- function(x){
   return(mean(x))
 }
 getDTeval(the.statement = "mean.get(1:5)", return.as = "result")
-```
 
 Here mean.get() is a customized function created to evaluate the mean of an objext x. 
   
@@ -359,6 +364,9 @@ However, the use of mean.get() generates a translation error.  Any coding statem
 A workaround this issue would be to add a space between the mean.get( functionality and the parenthesis as follows:
 
 ```{r eample 9b}
+mean.get <- function(x){
+  return(mean(x))
+}
 getDTeval(the.statement = "mean.get (1:5)", return.as = "result")
 ```
 
