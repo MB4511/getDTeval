@@ -1,5 +1,5 @@
 Package: getDTeval
-Title: Translating coding statements using get() and eval() for improved run-time coding efficiency
+Title: Translating Coding Statements using get() and eval() for Improved Run-Time Coding Efficiency
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
