@@ -1,5 +1,6 @@
 Package: getDTeval
-Title: Translating Coding Statements using get() and eval() for Improved Run-Time Coding Efficiency
+Title: Translating Coding Statements using get() and eval() for
+        Improved Run-Time Coding Efficiency
 Version: 0.0.1
 Authors@R: c(
     person("David", "Shilane", , "david.shilane@columbia.edu", c("aut")),
@@ -11,21 +12,19 @@ Authors@R: c(
 Depends: R (>= 3.6.0)
 Description: The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.
     The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.
-License: GPL-3 
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: 
-    knitr,
-    rmarkdown,
-    dplyr,
-    testthat (>= 2.1.0), 
-    covr,
-    formulaic,
-    devtools
-Imports: 
-    stats,
-    data.table,
-    microbenchmark,
-    utils
+Suggests: knitr, rmarkdown, dplyr, testthat (>= 2.1.0), covr,
+        formulaic, devtools
+Imports: stats, data.table, microbenchmark, utils
 VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2020-11-12 02:25:58 UTC; mayurbansal
+Author: David Shilane [aut],
+  Mayur Bansal [ctb, cre],
+  Anderson Nelson [ctb],
+  Caffrey Lee [ctb],
+  Zichen Huang [ctb]
+Maintainer: Mayur Bansal <mb4511@columbia.edu>

@@ -1,0 +1,177 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8]{inputenc} % @SET ENCODING@
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `getDTeval'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\inputencoding{utf8}
+\item[Title]\AsIs{Translating Coding Statements using get() and eval() for
+Improved Run-Time Coding Efficiency}
+\item[Version]\AsIs{0.0.1}
+\item[Depends]\AsIs{R (>= 3.6.0)}
+\item[Description]\AsIs{The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.
+The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs.}
+\item[License]\AsIs{GPL-3}
+\item[Encoding]\AsIs{UTF-8}
+\item[LazyData]\AsIs{true}
+\item[RoxygenNote]\AsIs{7.1.1}
+\item[Suggests]\AsIs{knitr, rmarkdown, dplyr, testthat (>= 2.1.0), covr,
+formulaic, devtools}
+\item[Imports]\AsIs{stats, data.table, microbenchmark, utils}
+\item[VignetteBuilder]\AsIs{knitr}
+\item[NeedsCompilation]\AsIs{no}
+\item[Author]\AsIs{David Shilane [aut],
+Mayur Bansal [ctb, cre],
+Anderson Nelson [ctb],
+Caffrey Lee [ctb],
+Zichen Huang [ctb]}
+\item[Maintainer]\AsIs{Mayur Bansal }\email{mb4511@columbia.edu}\AsIs{}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{benchmark.getDTeval}{benchmark.getDTeval}{benchmark.getDTeval}
+%
+\begin{Description}\relax
+Performs a benchmarking experiment for data.table coding statements that use get() or eval() for programmatic designs.  The a) original statement is compared to b) passing the original statement through getDTeval and also to c) an optimized coding statement.  The results can demonstrate the overall improvement of using the coding translations offered by getDTeval()
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+benchmark.getDTeval(
+  the.statement,
+  times = 30,
+  seed = 47,
+  envir = .GlobalEnv,
+  ...
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{the.statement}] refers to the original coding statement which needs to be translated to an optimized form.  This value may be entered as either a character value or as an expression.
+
+\item[\code{times}] The number of iterations to run the benchmarking experiment
+
+\item[\code{seed}] an integer value specifying the seed of the pseudorandom number generator.
+
+\item[\code{envir}] The environment in which the calculation takes place, with the global environment .GlobalEnv set as the default.
+
+\item[\code{...}] provision for additonal arguments
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+#Benchmarking runtime performances in calculating mean age
+dat<-formulaic::snack.dat
+age.name<-'Age'
+benchmark.getDTeval(the.statement = "dat[,.(mean_age=mean(get(age.name)))]", times = 5,  seed = 10)
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{function.ending.point}{function.ending.point}{function.ending.point}
+%
+\begin{Description}\relax
+An Internal function to return the ending index
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+function.ending.point(all.chars, beginning.index, ...)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{all.chars}] all the characters of the statement
+
+\item[\code{beginning.index}] specifies the index of the first character
+
+\item[\code{...}] provision for additional arguments
+\end{ldescription}
+\end{Arguments}
+\inputencoding{utf8}
+\HeaderA{getDTeval}{getDTeval}{getDTeval}
+%
+\begin{Description}\relax
+The getDTeval() function facilitates the translation of the original coding statement to an optimized form for improved runtime efficiency without compromising on the programmatic coding design.  The function can either provide a translation of the coding statement, directly evaluate the translation to return a coding result, or provide both of these outputs
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+getDTeval(
+  the.statement,
+  return.as = "result",
+  coding.statements.as = "character",
+  eval.type = "optimized",
+  envir = .GlobalEnv,
+  ...
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{the.statement}] refers to the original coding statement which needs to be translated to an optimized form.  This value may be entered as either a character value or as an expression.
+
+\item[\code{return.as}] refers to the mode of output. It could return the results as a coding statement (return.as = "code"), an evaluated coding result (return.as = "result", which is the default value), or a combination of both (return.as = "all").
+
+\item[\code{coding.statements.as}] determines whether the coding statements provided as outputs are returned as expression objects (return.as = "expression") or as character values (return.as = "character", which is the default).
+
+\item[\code{eval.type}] a character value stating whether the coding statement should be evaluated in its current form (eval.type = "as.is") or have its called to get() and eval() translated (eval.type = "optimized", the default setting).
+
+\item[\code{envir}] Specify the environment for the required function. .GlobalEnv is set as default
+
+\item[\code{...}] provision for additional arguments
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+# Using getDTeval to calculate mean age
+dat<-formulaic::snack.dat
+age.name<-'Age'
+getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{translate.fn.calls}{translate.fn.calls}{translate.fn.calls}
+%
+\begin{Description}\relax
+Internal Function that translates programmatic designs into optimized coding statements for faster calculations
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+translate.fn.calls(
+  the.statement,
+  function.name = "get(",
+  envir = .GlobalEnv,
+  ...
+)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{the.statement}] original coding statement to perform the required calculation. Must be provided as a character value.
+
+\item[\code{function.name}] Name of the function to be translated to an optimized form. Parameter values should be either 'get(' or 'eval('. 'get(' is set as default
+
+\item[\code{envir}] Specify the environment for the required function. .GlobalEnv is set as default
+
+\item[\code{...}] provision for additional arguments
+\end{ldescription}
+\end{Arguments}
+\printindex{}
+\end{document}

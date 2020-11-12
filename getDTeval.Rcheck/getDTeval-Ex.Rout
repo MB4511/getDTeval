@@ -1,0 +1,107 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "getDTeval"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "getDTeval-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('getDTeval')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("benchmark.getDTeval")
+> ### * benchmark.getDTeval
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: benchmark.getDTeval
+> ### Title: benchmark.getDTeval
+> ### Aliases: benchmark.getDTeval
+> 
+> ### ** Examples
+> 
+> #Benchmarking runtime performances in calculating mean age
+> dat<-formulaic::snack.dat
+> age.name<-'Age'
+> benchmark.getDTeval(the.statement = "dat[,.(mean_age=mean(get(age.name)))]", times = 5,  seed = 10)
+                     category      Min.   1st Qu.    Median      Mean   3rd Qu.
+1:        getDTeval statement 0.0005600 0.0005676 0.0005684 0.0006324 0.0005914
+2:  original coding statement 0.0006152 0.0006173 0.0006246 0.0006755 0.0006516
+3: optimized coding statement 0.0003722 0.0003865 0.0003942 0.0019299 0.0004619
+        Max.
+1: 0.0008745
+2: 0.0008689
+3: 0.0080345
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("benchmark.getDTeval", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("getDTeval")
+> ### * getDTeval
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: getDTeval
+> ### Title: getDTeval
+> ### Aliases: getDTeval
+> 
+> ### ** Examples
+> 
+> # Using getDTeval to calculate mean age
+> dat<-formulaic::snack.dat
+> age.name<-'Age'
+> getDTeval(the.statement = 'dat[,.(mean_age=mean(get(age.name)))]',return.as = 'result')
+   mean_age
+1:   55.201
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("getDTeval", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.399 0.015 0.353 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
