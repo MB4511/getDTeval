@@ -1,5 +1,12 @@
 # getDTeval
 
+
+![R-CMD-check](https://github.com/MB4511/getDTeval/workflows/R-CMD-check/badge.svg)
+[![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![CRAN status](https://www.r-pkg.org/badges/version/getDTeval)](https://CRAN.R-project.org/package=getDTeval)
+
+
+
 ## Overview
 
 
@@ -8,12 +15,15 @@ Using the get() and eval() functions allows for more programmatic coding designs
 
 ## Install the current release from CRAN:
 
+```r
 install.packages('getDTeval')
+```
 
 ## Install the development version from GitHub:
 
+```r
 devtools::install_github('mb4511/getDTeval')
-
+```
 ## Functions
 
 **getDTeval package** has 2 main functions. 
@@ -39,10 +49,13 @@ There are some major applications to the getDTeval package:
 
 Import the data from formulaic package 
 
+```r
 dat = formulaic::snack.dat
+```
 
 Here the data contains a simulated survey information with records on demographics and other tracked metrics based on the survey responses
 
+```r
 names(dat)
 
  [1] "Age"                      
@@ -70,9 +83,10 @@ names(dat)
 [23] "Age Group"                
 [24] "Income Group"             
 [25] "User ID"
-
+```
 Set up some constant names:
 
+```r
 mean.age.name = "Mean Age"
 age.name = "Age"
 awareness.name = "Awareness"
@@ -118,5 +132,5 @@ $result
 $code
 [1] "dat[Gender == 'Female', mean(Age), keyby = region.name]"
 Please check out the vignettes file to see more examples and details.
-
+```
 
