@@ -4,6 +4,8 @@
 ![R-CMD-check](https://github.com/MB4511/getDTeval/workflows/R-CMD-check/badge.svg)
 [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN status](https://www.r-pkg.org/badges/version/getDTeval)](https://CRAN.R-project.org/package=getDTeval)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/getDTeval?color=blue)](https://cran.r-project.org/package=getDTeval)
+[![](https://cranlogs.r-pkg.org/badges/getDTeval)](https://cran.r-project.org/package=getDTeval)
 
 
 
