@@ -131,7 +131,8 @@ getDTeval <- function(the.statement, return.as = "result", coding.statements.as 
 
   the.result <- eval(expr = parse(text = the.statement), envir = envir)
 
-  names(the.result) <- gsub(pattern = "`", replacement = "", x = names(the.result))
+  new.names <- gsub(pattern = "`", replacement = "", x = names(the.result))
+  if (is.data.table(the.result)) setnames(the.result, new.names) else names(the.result) <- new.names
 
   if(return.as == value.all){
     if(coding.statements.as == value.expression){
